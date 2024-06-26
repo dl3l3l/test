@@ -12,7 +12,7 @@ public class SimpleJavaCode {
         }
 
         // 조건문 예제
-        int number = 20;
+        int number = 30;
         if (number > 0) {
             System.out.println("양수입니다.");
         } else if (number < 0) {
