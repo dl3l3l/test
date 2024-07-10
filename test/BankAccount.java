@@ -30,6 +30,8 @@ public class BankAccount {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             System.out.println(amount + "원이 출금되었습니다. 현재 잔액: " + balance + "원");
+        } else if (amount > balance) {
+            System.out.println("잔액이 부족합니다. 현재 잔액: " + balance + "원");
         } else {
             System.out.println("출금 금액이 잘못되었습니다. 현재 잔액: " + balance + "원");
         }
@@ -42,6 +44,10 @@ public class BankAccount {
 
         account.deposit(500.0);
         account.withdraw(200.0);
-        account.withdraw(1500.0);
+        account.withdraw(-100.0);  // 잘못된 출금 시도
+        account.withdraw(1500.0);  // 잔액 부족 출금 시도
+
+        // 잔액이 음수가 되는 상황 추가
+        account.withdraw(1300.0);  // 이 경우는 실제 출금이 이루어져야 한다.
     }
 }
